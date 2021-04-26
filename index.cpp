@@ -1,18 +1,16 @@
 #include<iostream>
-using namespace std;
-
+//using namespace std; //includes all the object
+using std::cout; // this only include cout object
+using std::cin; // this include cin object
 int main(){
-	int integer = 2;
-	float floatingNumber = 1.99;
-	double doubleNumber = 1.8888888;
-	bool boolean = false;
-	string str = "this is str";
 	
+	char name;
 	
-	cout << "integer\t" << integer << "\n";
-	cout << "floatingNumber\t" << floatingNumber << "\n";
-	cout << "doubleNumber\t" << doubleNumber << "\n";
-	cout << "boolean\t" << boolean << "\n";
-	cout << "string\t" << str << "\n";
+	cout << "enter your name" << std::endl; // we had to explictly defined namespace of endl, coz we did not include it
+	
+	cin >> name;
+	cout << "this is example of cout" << std::endl;
+	
+	cout<< "the first letter of your name is " << name;
 	
 }

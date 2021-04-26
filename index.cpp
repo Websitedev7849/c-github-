@@ -1,16 +1,17 @@
 #include<iostream>
-//using namespace std; //includes all the object
 using std::cout; // this only include cout object
 using std::cin; // this include cin object
+
+namespace customNamespace{
+	int height;
+}
+	
 int main(){
 	
-	char name;
+
+	int height = 5;
+	customNamespace::height = 6;
 	
-	cout << "enter your name" << std::endl; // we had to explictly defined namespace of endl, coz we did not include it
-	
-	cin >> name;
-	cout << "this is example of cout" << std::endl;
-	
-	cout<< "the first letter of your name is " << name;
-	
+	cout << "height outside namespace CustomNamespace is " << height << std::endl;
+	cout << "height inside namespace CustomNamespace is " << customNamespace::height;
 }

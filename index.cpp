@@ -1,14 +1,14 @@
 #include<iostream>
+#include<stdlib.h>
 using namespace std;
 
 int main(){
-	int *ptr = NULL;
-	ptr = new int;
-	
+	int *ptr = (int *)malloc(sizeof(int));
 	*ptr = 56;
 	
-	cout << "the address of ptr is " << ptr << endl;
-	cout << "the value at ptr is " << *ptr << endl;
+	cout << "address of ptr is " << ptr << endl;
+	cout << "value at ptr is " << *ptr << endl;
+	
 	
 	return 0;
 }

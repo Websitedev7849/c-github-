@@ -1,17 +1,14 @@
 #include<iostream>
-using std::cout; // this only include cout object
-using std::cin; // this include cin object
+using namespace std;
 
-namespace customNamespace{
-	int height;
-}
-	
 int main(){
+	int *ptr = NULL;
+	ptr = new int;
 	
-
-	int height = 5;
-	customNamespace::height = 6;
+	*ptr = 56;
 	
-	cout << "height outside namespace CustomNamespace is " << height << std::endl;
-	cout << "height inside namespace CustomNamespace is " << customNamespace::height;
+	cout << "the address of ptr is " << ptr << endl;
+	cout << "the value at ptr is " << *ptr << endl;
+	
+	return 0;
 }

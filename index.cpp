@@ -1,17 +1,17 @@
 #include<iostream>
-using std::cout; // this only include cout object
-using std::cin; // this include cin object
+using std::cout;
+using std::cin;
+using std::string;
 
-namespace customNamespace{
-	int height;
-}
-	
 int main(){
-	
 
-	int height = 5;
-	customNamespace::height = 6;
+	string name = "wassupp bro?";
+
+	cout << name << std::endl;
+	cout << "please enter your name" << std::endl;
+	getline(cin, name);
+	cout << name;
 	
-	cout << "height outside namespace CustomNamespace is " << height << std::endl;
-	cout << "height inside namespace CustomNamespace is " << customNamespace::height;
+	return 0;
+
 }

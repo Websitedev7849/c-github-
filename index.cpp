@@ -5,16 +5,15 @@ using std::string;
 
 int main(){
 
-	string name = "wassupp bro?";
+	string name = "abcdefghijklmonpqrstuvwxyz";
 
-	//appending to string using + operater
-	name += " How you doin?";
+	cout << "the string is " << name << std::endl; 
 
-	cout << name << std::endl;
+	cout << "length of string is " << name.length() << std::endl;
 
-	name.append("string( which is a object) from this point forword was append using append function");
+	cout << "last letter of string is" << std::endl;
 
-	cout << name << std::endl;
+	cout << name[name.length() - 1] << std::endl;
 
 	return 0;
 

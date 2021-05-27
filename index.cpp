@@ -7,11 +7,15 @@ int main(){
 
 	string name = "wassupp bro?";
 
+	//appending to string using + operater
+	name += " How you doin?";
+
 	cout << name << std::endl;
-	cout << "please enter your name" << std::endl;
-	getline(cin, name);
-	cout << name;
-	
+
+	name.append("string( which is a object) from this point forword was append using append function");
+
+	cout << name << std::endl;
+
 	return 0;
 
 }

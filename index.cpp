@@ -9,6 +9,13 @@ public:
 	string name;
 	string title;
 	int age;
+
+	void introduceYourSelf(){
+		cout << "Name: " << name << endl;
+		cout << "Title: " << title << endl;
+		cout << "Age: " << age << endl;
+	}
+
 };
 
 int main(){
@@ -17,9 +24,7 @@ int main(){
 	employee1.title = "Developer";
 	employee1.age = 20;
 
-	cout << "Name: " << employee1.name << endl;
-	cout << "Title: " << employee1.title << endl;
-	cout << "Age: " << employee1.age << endl;
+	employee1.introduceYourSelf();
 
 	return 0;
 }

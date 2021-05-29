@@ -1,17 +1,25 @@
 #include<iostream>
-using std::cout; // this only include cout object
-using std::cin; // this include cin object
+using std::cout;
+using std::cin;
+using std::string;
+using std::endl;
 
-namespace customNamespace{
-	int height;
-}
-	
+class Employee {
+public:
+	string name;
+	string title;
+	int age;
+};
+
 int main(){
-	
+	Employee employee1;
+	employee1.name = "siddharth";
+	employee1.title = "Developer";
+	employee1.age = 20;
 
-	int height = 5;
-	customNamespace::height = 6;
-	
-	cout << "height outside namespace CustomNamespace is " << height << std::endl;
-	cout << "height inside namespace CustomNamespace is " << customNamespace::height;
+	cout << "Name: " << employee1.name << endl;
+	cout << "Title: " << employee1.title << endl;
+	cout << "Age: " << employee1.age << endl;
+
+	return 0;
 }

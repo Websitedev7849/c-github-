@@ -6,25 +6,30 @@ using std::endl;
 
 class Employee {
 public:
-	string name;
-	string title;
-	int age;
+	string Name;
+	string Title;
+	int Age;
 
 	void introduceYourSelf(){
-		cout << "Name: " << name << endl;
-		cout << "Title: " << title << endl;
-		cout << "Age: " << age << endl;
+		cout << "Name: " << Name << endl;
+		cout << "Title: " << Title << endl;
+		cout << "Age: " << Age << endl;
+	}
+
+	Employee (string name, string title, int age){
+		Name = name;
+		Title = title;
+		Age = age;
 	}
 
 };
 
 int main(){
-	Employee employee1;
-	employee1.name = "siddharth";
-	employee1.title = "Developer";
-	employee1.age = 20;
-
+	Employee employee1("siddharth", "Developer", 20);
 	employee1.introduceYourSelf();
+
+	Employee employee2("pawar", "CEO", 20);
+	employee2.introduceYourSelf();
 
 	return 0;
 }

@@ -1,17 +1,11 @@
-#include<iostream>
-using std::cout; // this only include cout object
-using std::cin; // this include cin object
+#include <iostream>
+#include "./Header Files/task.h"
+using std::cout;
+using std::endl;
 
-namespace customNamespace{
-	int height;
-}
-	
+
+
 int main(){
-	
-
-	int height = 5;
-	customNamespace::height = 6;
-	
-	cout << "height outside namespace CustomNamespace is " << height << std::endl;
-	cout << "height inside namespace CustomNamespace is " << customNamespace::height;
+	cout << "My lucky number is " << my_lucky_number() << endl;
+	return 0;
 }

@@ -15,6 +15,11 @@ const server = http.createServer((req,res)=>{
                 res.end();
             })
             break;
+        case '/get-info':
+            console.log("request was made to /get-info")
+            console.log(req.body);
+            res.write("request received");
+            break;
     }
 });
 

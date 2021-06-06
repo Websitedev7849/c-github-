@@ -18,25 +18,25 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="name">Name</label>
-                  <input type="text" class="form-control" id="Name" placeholder="Name">
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Name">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="DOB">Date of Birth</label>
-                  <input type="text" class="form-control" id="DOB" placeholder="DD/MM/YYYY">
+                  <label for="dob">Date of Birth</label>
+                  <input type="text" class="form-control" id="dob" name="dob" placeholder="DD/MM/YYYY">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="jd">Joining Date</label>
-                  <input type="text" class="form-control" id="jd" placeholder="DD/MM/YYYY">
+                  <input type="text" class="form-control" id="jd" name="jd" placeholder="DD/MM/YYYY">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="salary">Salary</label>
-                  <input type="number" class="form-control" id="salary" placeholder="Salary in rupees">
+                  <input type="number" class="form-control" id="salary" name="salary" placeholder="Salary in rupees">
                 </div>
             </div>
             
@@ -49,12 +49,21 @@
        const form = document.querySelector('#myForm');
        form.addEventListener('submit', e=>{
            e.preventDefault();
-           let name = form.name.value;
-           let dob = form.dob.value;
-           let jd = form.jd.value;
-           let salary = parseInt(form.salary.value);
+           let objToServer = {
+                name : form.name.value,
+                dob : form.dob.value,
+                jd : form.jd.value,
+                salary : parseInt(form.salary.value)
+           };
+
+           fetch("/get-info",{
+               method: "post",
+               body : JSON.stringify(objToServer)
+           })
+           .then(res=>{
+               console.log(res);
+           });
            
-           console.log(name, dob, jd, salary);
        });
    </script>
    

@@ -2,38 +2,12 @@
 using namespace std;
 
 class Employee {
-private:
+public:
 	string Name;
 	string Title;
 	int Age;
 
-public:
-
-	//getters and setters
-	void setName(string name){
-		Name = name;
-	}
-
-	string getName(){
-		return Name;
-	}
-
-	void setTitle(string title){
-		Title = title;
-	}
-
-	string getTitle(){
-		return Title;
-	}
 	
-	void setAge(int age){
-		Age = age;
-	}
-
-	int getAge(){
-		return Age;
-	}
-
 	void introduceYourSelf(){
 		cout << "Name: " << Name << endl;
 		cout << "Title: " << Title << endl;
@@ -48,12 +22,23 @@ public:
 
 };
 
-int main(){
-	Employee employee1("siddharth", "Developer", 20);
-	employee1.introduceYourSelf();
+// Developers class inherits properties of Employee class publically
+// constructor inherited from Employee handles assignment of inherited properties
 
-	employee1.setAge(21);
-	cout << employee1.getName() << " is now " << employee1.getAge() << " years old." << endl; 
+class Developer : public Employee{
+public:
+	string FavouriteProgrammingLang;
+	Developer(string name, string title, int age, string favouriteProgrammingLang)
+		: Employee(name, title, age)
+	{
+		FavouriteProgrammingLang = favouriteProgrammingLang;
+	}
+};
+
+int main(){
+	
+	Developer d = Developer("siddharth", "developer", 20, "javascript");
+	cout << d.Name << "\'s favourite programming language is " << d.FavouriteProgrammingLang << endl;
 
 	return 0;
 }

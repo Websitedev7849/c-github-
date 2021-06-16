@@ -17,3 +17,5 @@ int main()
         cout<<"\n After swapping"<<"\n A = "<<a<<"\n B = "<<b<<endl;
         return 0;
 }
+
+// https://bcaprogram.blogspot.com/2016/04/define-interface-which-has-methods-area.html

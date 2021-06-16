@@ -1,17 +1,19 @@
+//write a c++ program to interchange values of two integer numbers (using call by reference)
+
 #include<iostream>
-using std::cout; // this only include cout object
-using std::cin; // this include cin object
-
-namespace customNamespace{
-	int height;
+using namespace std;
+void swap (int &num1, int &num2) //&num1 and &bnum2 are Reference variables
+{
+        int temp;
+        temp=num1;
+        num1=num2;
+        num2=temp;
 }
-	
-int main(){
-	
-
-	int height = 5;
-	customNamespace::height = 6;
-	
-	cout << "height outside namespace CustomNamespace is " << height << std::endl;
-	cout << "height inside namespace CustomNamespace is " << customNamespace::height;
+int main()
+{
+        int a=5,b=10;
+        cout<<"\n Before swapping"<<"\n A = "<<a<<"\n B = "<<b<<endl;
+        swap(a,b);
+        cout<<"\n After swapping"<<"\n A = "<<a<<"\n B = "<<b<<endl;
+        return 0;
 }

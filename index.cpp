@@ -7,6 +7,15 @@ using std::endl;
 
 // vectors are dynamic array and have contiguos memory allocation
 
+void print_vector(std::vector<int> data){
+
+
+	for (int i = 0; i < data.size(); i++){
+		cout << data[i] << "\t";
+	}
+	cout << endl;
+
+}
 
 int main()
 {
@@ -15,13 +24,10 @@ int main()
 	// <int> defines the type of vector to created
 	std::vector<int> data = {0, 1, 2};
 	
-	cout << "last element of data before push_back method" << endl;
-	cout << data[data.size() - 1]  << endl;
-
 	data.push_back(3);
-
-	cout << "last element of data after push_back method" << endl;
-	cout << data[data.size() - 1]  << endl;
-
+	print_vector(data);
+	
+	data.push_back(4);
+	print_vector(data);
 	return 0;
 }

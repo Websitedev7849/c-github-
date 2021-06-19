@@ -1,17 +1,27 @@
-#include<iostream>
-using std::cout; // this only include cout object
-using std::cin; // this include cin object
+#include <iostream>
+#include <vector>
 
-namespace customNamespace{
-	int height;
-}
-	
-int main(){
-	
+using std::cout;
+using std::cin;
+using std::endl;
 
-	int height = 5;
-	customNamespace::height = 6;
+// vectors are dynamic array and have contiguos memory allocation
+
+
+int main()
+{
+	cout << "this is vectors" << endl;
+
+	// <int> defines the type of vector to created
+	std::vector<int> data = {0, 1, 2};
 	
-	cout << "height outside namespace CustomNamespace is " << height << std::endl;
-	cout << "height inside namespace CustomNamespace is " << customNamespace::height;
+	cout << "last element of data before push_back method" << endl;
+	cout << data[data.size() - 1]  << endl;
+
+	data.push_back(3);
+
+	cout << "last element of data after push_back method" << endl;
+	cout << data[data.size() - 1]  << endl;
+
+	return 0;
 }

@@ -7,14 +7,25 @@ using std::endl;
 
 // vectors are dynamic array and have contiguos memory allocation
 
+// IMPORTANT
+// whenever element is pushed into vector, it reallocates all the element to new memory location ...
+// with new pushed element
+
 void print_vector(std::vector<int> data){
 
-
+	// print value
 	for (int i = 0; i < data.size(); i++){
 		cout << data[i] << "\t";
 	}
+	
 	cout << endl;
+	
+	//print address of elements and typecast addr to int
+	for (int i = 0; i < data.size(); i++){
+		cout << (int) &data[i] << "\t";
+	}
 
+	cout << endl << endl;
 }
 
 int main()

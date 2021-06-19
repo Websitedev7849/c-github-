@@ -3,12 +3,17 @@
 using namespace std;
 
 int main(){
-	int *ptr = (int *)malloc(sizeof(int));
-	*ptr = 56;
 	
-	cout << "address of ptr is " << ptr << endl;
-	cout << "value at ptr is " << *ptr << endl;
+	int data[] = {0, 1, 2, 3};
+
+	//data return address of first value of array 
+	for(int i = 0; i < 4; i++){
+		cout << *(data + i) << endl;
+	}
 	
+
+
+	cout << endl;
 	
 	return 0;
 }

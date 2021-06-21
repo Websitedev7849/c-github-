@@ -4,41 +4,38 @@
 using std::cout;
 using std::cin;
 using std::endl;
+using std::string;
 
-// vectors are dynamic array and have contiguos memory allocation
+class Student {
+public:
+	string Name;
+	int Age;
 
-// IMPORTANT
-// whenever element is pushed into vector, it reallocates all the element to new memory location ...
-// with new pushed element
-
-void print_vector(std::vector<int> data){
-
-	// print value
-	for (int i = 0; i < data.size(); i++){
-		cout << data[i] << "\t";
-	}
-	
-	cout << endl;
-	
-	//print address of elements and typecast addr to int
-	for (int i = 0; i < data.size(); i++){
-		cout << (int) &data[i] << "\t";
+	Student(string name, int age){
+		Name = name;
+		Age = age;
 	}
 
-	cout << endl << endl;
-}
+};
 
 int main()
 {
-	cout << "this is vectors" << endl;
 
-	// <int> defines the type of vector to created
-	std::vector<int> data = {0, 1, 2};
-	
-	data.push_back(3);
-	print_vector(data);
-	
-	data.push_back(4);
-	print_vector(data);
+	std::vector<Student*> group;
+
+	Student* student = new Student("siddharth", 18);
+
+	cout << student -> Name << " " << student -> Age << endl;
+	group.push_back(student);
+
+	student = new Student("pranjal", 23);
+	cout << student -> Name << " " << student -> Age << endl;
+	group.push_back(student);
+
+	cout << "\n Object Pointer are stored in the vector" << endl;
+	for(int i = 0; i < group.size(); i++){
+		cout << group[i] -> Name << " " << group[i] -> Age << endl;
+	}
+
 	return 0;
 }

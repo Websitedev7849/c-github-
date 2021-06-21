@@ -16,25 +16,75 @@ public:
 		Age = age;
 	}
 
+	// member function to display object from vector collection
+	void display_group(std::vector <Student*> group){
+
+		cout << endl;
+
+		for (int i = 0; i < group.size(); i++){
+			cout << endl << "Name :" << group[i] -> Name << endl;
+			cout << "Age :" << group[i] -> Age << endl;
+		}
+
+		cout << endl;
+
+	}
+
 };
 
 int main()
 {
 
-	std::vector<Student*> group;
+	int option;
 
-	Student* student = new Student("siddharth", 18);
+	string name;
+	int age;
 
-	cout << student -> Name << " " << student -> Age << endl;
-	group.push_back(student);
+	// vector to store pointers
+	std::vector <Student*> group;
 
-	student = new Student("pranjal", 23);
-	cout << student -> Name << " " << student -> Age << endl;
-	group.push_back(student);
+	// class object 
+	Student* student;
 
-	cout << "\n Object Pointer are stored in the vector" << endl;
-	for(int i = 0; i < group.size(); i++){
-		cout << group[i] -> Name << " " << group[i] -> Age << endl;
+
+	while(1){
+
+		cout << "1. Insert student Info into vector" << endl;
+		cout << "2. Display student Info from vector" << endl;
+
+		cin >> option;
+
+		switch(option){
+			case 1:
+				cout << endl;
+				cout << "Enter Name: "; 
+				cin.ignore();
+				getline(cin, name);
+				cout << "Enter Age ";
+				cin >> age;
+
+				// new operater invokes contstructor and allocates memory and returns pointer; 
+				student = new Student(name, age);
+
+				group.push_back(student);
+
+				cout << endl << "Information succesfully stored in vector" << endl << endl;
+
+				break;
+			
+			case 2:
+
+				student -> display_group(group);
+
+				break;
+
+
+			default:
+				cout << "Please Enter Proper Choice" << endl;
+		}
+
+		
+
 	}
 
 	return 0;
